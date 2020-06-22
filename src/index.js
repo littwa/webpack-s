@@ -6,41 +6,39 @@ import tmpl from './tmp.hbs';
 import phones from './phones.js';
 let _ = require('lodash');
 import PuzzleGame from './PuzzleGame.js';
-//=================================================================================
-// //файл index.js
-// import { q } from './module.js';
-// console.log(q); //undefined
-// //файл module.js
-// export let q = 777;
+
+//=======================simpleArray==========================================================
+
+import { users } from './DRAFT/simpleArray.js';
+console.log(users);
+
 //================TANK.JS==========================================================
-import { Mehanika, Enemy } from './tank/Mehanika.js';
-import { Tanchik } from './tank/Tanchik.js';
-import SuperEnemy from './tank/Superenemy.js';
-SuperEnemy;
+// import { Mehanika, Enemy } from './tank/Mehanika.js';
+// import { Tanchik } from './tank/Tanchik.js';
+// import SuperEnemy from './tank/Superenemy.js';
+// SuperEnemy;
 
-let canv = document.querySelector('.canv');
-let score = document.createElement('div');
-canv.insertAdjacentElement('beforebegin', score);
-score.style.height = '20px';
-score.style.width = '650px';
-score.style.background = '#f00';
-score.textContent = `exterminated: 0 | diesel: 0`;
-score.style.padding = '2px';
+// let canv = document.querySelector('.canv');
+// let score = document.createElement('div');
+// canv.insertAdjacentElement('beforebegin', score);
+// score.style.height = '20px';
+// score.style.width = '650px';
+// score.style.background = '#f00';
+// score.textContent = `exterminated: 0 | diesel: 0`;
+// score.style.padding = '2px';
 
-let enem = new Enemy();
-let tan = new Tanchik();
-let superEnem = new SuperEnemy();
-export function fntd() {
-  enem = new Enemy();
-  console.log(this);
-}
-export function fntds() {
-  superEnem = new SuperEnemy();
-  console.log(this);
-}
-export { canv, enem, superEnem, score };
-
-// console.log(enem.divEnemy);
+// let enem = new Enemy();
+// let tan = new Tanchik();
+// let superEnem = new SuperEnemy();
+// export function fntd() {
+//   enem = new Enemy();
+//   console.log(this);
+// }
+// export function fntds() {
+//   superEnem = new SuperEnemy();
+//   console.log(this);
+// }
+// export { canv, enem, superEnem, score };
 
 //=================================================================================
 
