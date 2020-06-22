@@ -1,0 +1,235 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+  /*
+   * CSS image reference example.
+   */
+  background-image: url('./images/bg-pattern.png');
+}
+
+/* ================================= */
+
+body {
+  padding: 0.5rem;
+}
+
+.gallery {
+  max-width: 900px;
+  padding: 0.5rem;
+  margin: auto;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gallery-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.gallery-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 33%;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(0.5);
+}
+
+.gallery-text {
+  margin: 0;
+  position: absolute;
+  color: #fefefe;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.module-card-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 23%;
+}
+
+.module-card-img {
+  margin: 20px 0;
+  align-self: center;
+  width: 100%;
+  height: auto;
+}
+
+.module-card-button {
+  background: seagreen;
+  color: white;
+  border: none;
+  margin-top: auto;
+  padding: 10px;
+}
+
+.price {
+  text-align: right;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+  transition: 1s;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+.item {
+  font-size: 25px;
+}
+
+body {
+  font: 15px arial, sans-serif;
+}
+h1 {
+  margin: 0 0 10px 0;
+  padding: 5px;
+  font-size: 24px;
+  background-color: #999;
+  color: #fff;
+}
+table {
+  margin: 10px;
+}
+th,
+td {
+  padding: 5px;
+  border: 1px solid #999;
+}
+th {
+  background: #ccc;
+}
+tr:nth-child(odd) {
+  background: #eee;
+}
+td a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.gallery-title {
+  text-align: center;
+}
+/* ============================================================ */
+.dt {
+  display: grid;
+  grid-template-rows: repeat(6, 250px);
+}
+.dt li {
+  background-color: rgb(20, 41, 34);
+  width: 250px;
+  list-style: none;
+  overflow: hidden;
+}
+.dt li:nth-child(2n) {
+  background-color: darkorange;
+}
+/* .dt li img {
+} */
+/* =============timer=2====================== */
+button[data-act] {
+  background-color: rgb(223, 226, 43);
+  border: 1px ridge #000;
+}
+/* ========================= */
+.pixib {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 16px;
+}
+/* ========TANK===================================== */
+.canv {
+  width: 650px;
+  height: 550px;
+  padding: 0;
+  background-color: rgb(44, 42, 42);
+  position: relative;
+}
+.mehan {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('images/tank.png');
+  background-size: cover;
+  /* transform: rotate(-450deg); */
+  /* transition: 0.3s; */
+}
+/* ======================================FIRE======================== */
+.meh::after {
+  position: absolute;
+  top: -20px;
+  left: 8px;
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+
+  content: '*';
+  color: darkorange;
+  font-size: 36px;
+
+  opacity: 1; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: show 0.5s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+  animation-delay: 0.05s; /* Задержка перед началом */
+}
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* ================================================================= */
+.enemy {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('images/enemy.png');
+  background-size: cover;
+  /* box-shadow: 0 0 10px 5px yellow; */
+
+  /* transform: rotate(-450deg); */
+  /* transition: 0.3s; */
+}
+.enemysuper {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  /* background: #fff; */
+  background: url('images/superenemy.png');
+  background-size: cover;
+}
