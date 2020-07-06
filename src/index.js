@@ -1,16 +1,93 @@
-import './styles.css';
+// import './styles.css';
 
-import countries from './countries.js';
-import countriesinjson from './countriesinjson.json';
-import tmpl from './tmp.hbs';
-import phones from './phones.js';
-let _ = require('lodash');
-import PuzzleGame from './PuzzleGame.js';
+// import countries from './countries.js';
+// import countriesinjson from './countriesinjson.json';
+// import tmpl from './tmp.hbs';
+// import phones from './phones.js';
+// let _ = require('lodash');
+// import PuzzleGame from './PuzzleGame.js';
+
+
 
 //=======================simpleArray==========================================================
 
 import { users } from './DRAFT/simpleArray.js';
-console.log(users);
+// import { forEach } from 'core-js/fn/array';
+
+// console.log(users);
+
+
+// {
+//     id: 'e1bf46ab-7168-491e-925e-f01e21394812',
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   }
+
+// let d = users.map(el=> ({name: el.name, age: el.age, isAdault: el.age>25?true:false}))
+// console.log(d)
+
+// let r = users.reduce((ac, {isActive, age})=>isActive?ac+=age: ac, 0)
+// console.log(r)
+
+// let f = users.filter(el=>el.eyeColor === 'brown')
+// console.log(f)
+
+// let s = users.filter(el=>el.friends.length === 2).sort((a,b)=>a.age - b.age)
+// console.log(s)
+
+// let g = users.sort((a,b)=>a.friends.length - b.friends.length)
+// console.log(g)
+
+//-------------------------7--------------------------------------
+
+// let t = users.reduce((ac,el)=> el.friends?[...ac, ...el.friends]:ac , []).filter((ell, idx, arr)=>arr.indexOf(ell) !== arr.lastIndexOf(ell))
+// let b = users.reduce((acc, ell)=>{t.forEach(elll=>ell.friends.includes(elll)?acc.push(ell.name):acc)
+//     return acc},[]).reduce((unic, eell)=> unic.includes(eell)?unic:[ ...unic, eell], [] )
+
+// console.log(t, b)
+//----------------------------8-----------------------------------
+// let q = users.reduce((ac, el)=>{if(el.gender === 'female'&& el.age >= 21 && el.isActive === true){
+// ac.push(el)
+// } return ac}, [])
+
+// console.log(q[Math.floor(Math.random()*q.length)])
+
+//-------------------------------9-------------------------------------
+//  let w = users.map(el=> ({name: el.name, skills: el.skills.map(el=>el[0]).join("")}))
+//  console.log(w)
+//-------------------------------10-------------------------------------
+// let d = users.sort((a,b)=> {
+//     let aa = a.age;
+//     let bb = b.age;
+//     if(a.isActive){aa = a.age*100}  
+//     if(b.isActive){bb = b.age*100}
+//     return aa-bb } );      //.map(el=> ({name: el.name, age: el.age, balance: el.balance}))
+   
+
+    let y = users.sort((a,b)=> (a.isActive?a.age*100:a.age) - (b.isActive?b.age*100:b.age) ).map(el=> ({name: el.name, age: el.age, balance: el.balance, isActive: el.isActive}))
+
+console.log(y)
+
+
+//1 получить масив с обьектами типа {name, age}
+//1.1 получить масив с обьектами типа {name, balance, isAdault} *************************
+//2 получить суммарный возраст всех пользователей
+//3 получить суммарный возраст активных пользователей
+//4 найти пользователя с brown глазами
+//5 найти пользователей только с 2 друзьями и сортировать их по возросту
+//6 сортировать пользователей по количеству их друзей
+//7 найти пользователей у которых есть одинаковые друзья(хотябы 1)
+//8 выбрать одну из совершеннолетних активных девченок. случайным образом.
+//9 вернуть масив с обьектами типа {name, skills}. где skills - это строка содержащая первые буквы скилов например для ['lorem', 'veniam', 'culpa'] вернуть 'lvc'
+//10 вернуть массив с обьектами типа {name, age, balance}. отсортированый по возрасту, но все активные пользователи(отсортированые по возрасту между собой) сверху а потом все неактивные также (отсортированые по возрасту между собой). - 1 map и 1 sort. *** сортировка проходит в 1 sort]
+
 
 //================TANK.JS==========================================================
 // import { Mehanika, Enemy } from './tank/Mehanika.js';
