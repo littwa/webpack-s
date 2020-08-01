@@ -7,28 +7,12 @@
 // let _ = require('lodash');
 // import PuzzleGame from './PuzzleGame.js';
 
-
-
 //=======================simpleArray==========================================================
 
 import { users } from './DRAFT/simpleArray.js';
 // import { forEach } from 'core-js/fn/array';
 
 // console.log(users);
-
-
-// {
-//     id: 'e1bf46ab-7168-491e-925e-f01e21394812',
-//     name: 'Sheree Anthony',
-//     email: 'shereeanthony@kog.com',
-//     eyeColor: 'brown',
-//     friends: ['Goldie Gentry', 'Briana Decker'],
-//     isActive: true,
-//     balance: 2764,
-//     skills: ['lorem', 'veniam', 'culpa'],
-//     gender: 'female',
-//     age: 39,
-//   }
 
 // let d = users.map(el=> ({name: el.name, age: el.age, isAdault: el.age>25?true:false}))
 // console.log(d)
@@ -52,7 +36,26 @@ import { users } from './DRAFT/simpleArray.js';
 //     return acc},[]).reduce((unic, eell)=> unic.includes(eell)?unic:[ ...unic, eell], [] )
 
 // console.log(t, b)
+
+//-------------------------7-V2-------------------------------------
+
+// let commonFiends = [];
+// users.forEach((u) => {
+//   u.friends.forEach((f) => {
+//     users.forEach((us) => {
+//       us.friends.forEach((fr) => {
+//         if (fr === f && u.name !== us.name) {
+//           commonFiends.push([u.name, "<-пользователи->", us.name, "общий друг->", fr]);
+//         }
+//       });
+//     });
+//   });
+// });
+
+// console.log(commonFiends);
+
 //----------------------------8-----------------------------------
+
 // let q = users.reduce((ac, el)=>{if(el.gender === 'female'&& el.age >= 21 && el.isActive === true){
 // ac.push(el)
 // } return ac}, [])
@@ -66,15 +69,23 @@ import { users } from './DRAFT/simpleArray.js';
 // let d = users.sort((a,b)=> {
 //     let aa = a.age;
 //     let bb = b.age;
-//     if(a.isActive){aa = a.age*100}  
+//     if(a.isActive){aa = a.age*100}
 //     if(b.isActive){bb = b.age*100}
 //     return aa-bb } );      //.map(el=> ({name: el.name, age: el.age, balance: el.balance}))
-   
 
-    let y = users.sort((a,b)=> (a.isActive?a.age*100:a.age) - (b.isActive?b.age*100:b.age) ).map(el=> ({name: el.name, age: el.age, balance: el.balance, isActive: el.isActive}))
+let y = users
+  .sort(
+    (a, b) =>
+      (a.isActive ? a.age * 100 : a.age) - (b.isActive ? b.age * 100 : b.age),
+  )
+  .map(el => ({
+    name: el.name,
+    age: el.age,
+    balance: el.balance,
+    isActive: el.isActive,
+  }));
 
-console.log(y)
-
+console.log(y);
 
 //1 получить масив с обьектами типа {name, age}
 //1.1 получить масив с обьектами типа {name, balance, isAdault} *************************
@@ -87,7 +98,6 @@ console.log(y)
 //8 выбрать одну из совершеннолетних активных девченок. случайным образом.
 //9 вернуть масив с обьектами типа {name, skills}. где skills - это строка содержащая первые буквы скилов например для ['lorem', 'veniam', 'culpa'] вернуть 'lvc'
 //10 вернуть массив с обьектами типа {name, age, balance}. отсортированый по возрасту, но все активные пользователи(отсортированые по возрасту между собой) сверху а потом все неактивные также (отсортированые по возрасту между собой). - 1 map и 1 sort. *** сортировка проходит в 1 sort]
-
 
 //================TANK.JS==========================================================
 // import { Mehanika, Enemy } from './tank/Mehanika.js';
@@ -418,3 +428,29 @@ console.log(y)
 // );
 
 // document.querySelector('.container').insertAdjacentHTML('afterbegin', markup);
+
+//===============================================Пузырек=======================
+
+// let arr1 = [10, -13, -9, 3, 1, -4, 19, 32, 193, -25, -150];
+// let arr2 = [11, -3, 9, 3, -1, 44, 19, 2, 39, 25, -51];
+// let fn = (arrF) => {
+//   // let arr = Array.from(arrF);
+//   // let arr = [].concat(arrF);
+//   // let arr = arrF.slice();
+//   let arr = [...arrF];
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let j = arr.length - 1; j > i; j -= 1) {
+//       if (arr[j] < arr[j - 1]) {
+//         let k = arr[j];
+//         arr[j] = arr[j - 1];
+//         arr[j - 1] = k;
+//       }
+//     }
+//   }
+//   return arr;
+// };
+
+// console.log(fn(arr1));
+// console.log(fn(arr2));
+//===============================================================================

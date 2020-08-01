@@ -96,3 +96,20 @@ export const users = [
 //8 выбрать одну из совершеннолетних активных девченок. случайным образом.
 //9 вернуть масив с обьектами типа {name, skills}. где skills - это строка содержащая первые буквы скилов например для ['lorem', 'veniam', 'culpa'] вернуть 'lvc'
 //10 вернуть массив с обьектами типа {name, age, balance}. отсортированый по возрасту, но все активные пользователи(отсортированые по возрасту между собой) сверху а потом все неактивные также (отсортированые по возрасту между собой). - 1 map и 1 sort. *** сортировка проходит в 1 sort]
+
+//7
+
+let commonFiends = [];
+users.forEach(u => {
+  u.friends.forEach(f => {
+    users.forEach(us => {
+      us.friends.forEach(fr => {
+        if (fr === f && u.name !== us.name) {
+          commonFiends.push([u.name, us.name]);
+        }
+      });
+    });
+  });
+});
+
+console.log(commonFiends);
