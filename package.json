@@ -53,7 +53,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "gsap": "^3.2.6",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "imagemin": "^7.0.1",
     "json-server": "^0.16.1",
     "lodash": "^4.17.15",
